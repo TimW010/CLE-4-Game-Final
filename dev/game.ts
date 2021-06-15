@@ -1,13 +1,13 @@
+import { Level } from "./level.js";
 import { Menu } from "./menu.js";
 import { Words } from "./words.js";
 
 export class Game {
 
-    public play : boolean = false;
-    private menu : Menu;
     private count : number = 0;
-    private level_1_Words : string[] = ["K . T", ". . P", "P . P", "N . . T", "H . N D", "H . R T", "P . . S"];
-    private level_1_Letters : string[] = ["A", "AA", "O", "OO", "O", "E", "OE"];
+    public play : boolean = false;
+    private levels : Level;
+    private menu : Menu;
 
     constructor(){
         this.menu = new Menu(this);
@@ -18,12 +18,22 @@ export class Game {
             this.menu.div.remove();
             if(level == 1){
                 console.log("1");
+                this.levels = new Level(this, level);
+                this.gameLoop();
             } else if (level == 2){
                 console.log("2");
+                this.levels = new Level(this, level);
             } else if (level == 3){
                 console.log("3");
+                this.levels = new Level(this, level);
             }
         }
+    }
+
+    private gameLoop() : void {
+        this.levels.player.update();
+        this.levels.words.changeWord(this.count);
+        requestAnimationFrame(() => this.gameLoop());
     }
 }
 new Game();

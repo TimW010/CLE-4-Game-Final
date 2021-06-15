@@ -1,13 +1,28 @@
 export class Words {
 
-    words : string[];
+    private x : number;
+    private y : number;
+    private word : HTMLElement;
+    private words : string[];
 
-    constructor(array : string[]) {
+    constructor(array : string[]){
         this.words = array;
+        this.create();
     }
 
-    public changeWord(count : number = 0){
-        console.log(this.words[count]);
+    private create(){
+        this.word = document.createElement("word");
+        document.body.appendChild(this.word);
+        this.setPosition();
     }
 
+    private setPosition(){
+        this.y = (0 + this.word.clientHeight);
+        this.x = ((window.innerWidth / 2) - (this.word.clientWidth / 2));
+        this.word.style.transform = `translate(${this.x}px, ${this.y}px)`;
+    }
+
+    public changeWord(count : number){
+        this.word.innerHTML = this.words[count];
+    }
 }
