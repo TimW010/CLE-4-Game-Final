@@ -31,6 +31,36 @@ word {
     width: 500px; height: 100px;
 }
 
+level_1 {
+    position: absolute;
+    display: block;
+    background-image: url("../images/level_1_background.png");
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+level_2 {
+    position: absolute;
+    display: block;
+    background-image: url("../images/level_2_background.png");
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+level_3 {
+    position: absolute;
+    display: block;
+    background-image: url("../images/level_3_background.png");
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 wrongLetter {
     font-size: 100px;
     text-align: center;

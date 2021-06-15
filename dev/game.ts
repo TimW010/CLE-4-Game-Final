@@ -3,7 +3,7 @@ import { Menu } from "./menu.js";
 
 export class Game {
 
-    private next : boolean = false
+    private pause : boolean = false
     private count : number = 0;
     public play : boolean = false;
     private levels : Level;
@@ -33,14 +33,13 @@ export class Game {
     }
 
     private gameLoop() : void {
-        if(!this.next){
+        if(!this.pause){
             this.levels.player.update();
             this.levels.words.changeWord(this.count);
             this.levels.letters.changeLetters(this.count);
             this.levels.letters.update();
             if(this.checkCollision(this.levels.player.getBoundingRectangle(), this.levels.letters.getBoundingRectangle())){
                 console.log("collision");
-                this.levels.words.showCorrectWord(this.count);
             }
             requestAnimationFrame(() => this.gameLoop());
         }

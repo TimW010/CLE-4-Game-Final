@@ -2,7 +2,7 @@ import { Level } from "./level.js";
 import { Menu } from "./menu.js";
 export class Game {
     constructor() {
-        this.next = false;
+        this.pause = false;
         this.count = 0;
         this.play = false;
         this.menu = new Menu(this);
@@ -28,14 +28,13 @@ export class Game {
         }
     }
     gameLoop() {
-        if (!this.next) {
+        if (!this.pause) {
             this.levels.player.update();
             this.levels.words.changeWord(this.count);
             this.levels.letters.changeLetters(this.count);
             this.levels.letters.update();
             if (this.checkCollision(this.levels.player.getBoundingRectangle(), this.levels.letters.getBoundingRectangle())) {
                 console.log("collision");
-                this.levels.words.showCorrectWord(this.count);
             }
             requestAnimationFrame(() => this.gameLoop());
         }
