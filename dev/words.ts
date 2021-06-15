@@ -3,10 +3,12 @@ export class Words {
     private x : number;
     private y : number;
     private word : HTMLElement;
+    private correctWords : string[];
     private words : string[];
 
-    constructor(array : string[]){
+    constructor(array : string[], correct : string[]){
         this.words = array;
+        this.correctWords = correct;
         this.create();
     }
 
@@ -24,5 +26,9 @@ export class Words {
 
     public changeWord(count : number){
         this.word.innerHTML = this.words[count];
+    }
+
+    public showCorrectWord(count : number){
+        this.word.innerHTML = this.correctWords[count];
     }
 }

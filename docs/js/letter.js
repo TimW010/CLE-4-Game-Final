@@ -12,6 +12,9 @@ export class Letter {
         document.body.appendChild(this.wrongLetter);
         this.setPosition();
     }
+    getBoundingRectangle() {
+        return this.goodLetter.getBoundingClientRect();
+    }
     changeLetters(count) {
         this.goodLetter.innerHTML = this.goodLetters[count];
         this.wrongLetter.innerHTML = this.wrongLetters[count];

@@ -27,6 +27,10 @@ export class Letter {
         this.setPosition();
     }
 
+    public getBoundingRectangle() : DOMRect {
+        return this.goodLetter.getBoundingClientRect()
+    }
+
     public changeLetters(count : number){
         this.goodLetter.innerHTML = this.goodLetters[count];
         this.wrongLetter.innerHTML = this.wrongLetters[count];

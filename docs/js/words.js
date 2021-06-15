@@ -1,6 +1,7 @@
 export class Words {
-    constructor(array) {
+    constructor(array, correct) {
         this.words = array;
+        this.correctWords = correct;
         this.create();
     }
     create() {
@@ -15,6 +16,9 @@ export class Words {
     }
     changeWord(count) {
         this.word.innerHTML = this.words[count];
+    }
+    showCorrectWord(count) {
+        this.word.innerHTML = this.correctWords[count];
     }
 }
 //# sourceMappingURL=words.js.map
