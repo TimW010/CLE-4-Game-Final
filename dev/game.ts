@@ -1,6 +1,5 @@
 import { Level } from "./level.js";
 import { Menu } from "./menu.js";
-import { Words } from "./words.js";
 
 export class Game {
 
@@ -33,6 +32,8 @@ export class Game {
     private gameLoop() : void {
         this.levels.player.update();
         this.levels.words.changeWord(this.count);
+        this.levels.letters.changeLetters(this.count);
+        this.levels.letters.update();
         requestAnimationFrame(() => this.gameLoop());
     }
 }

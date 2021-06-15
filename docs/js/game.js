@@ -27,6 +27,8 @@ export class Game {
     gameLoop() {
         this.levels.player.update();
         this.levels.words.changeWord(this.count);
+        this.levels.letters.changeLetters(this.count);
+        this.levels.letters.update();
         requestAnimationFrame(() => this.gameLoop());
     }
 }

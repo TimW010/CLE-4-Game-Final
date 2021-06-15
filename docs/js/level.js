@@ -1,5 +1,6 @@
 import { Words } from "./words.js";
 import { Player } from "./player.js";
+import { Letter } from "./letter.js";
 export class Level {
     constructor(game, level) {
         this.level_1_Words = ["K . T", ". . P", "P . P", "N . . T", "H . N D", "H . R T", "P . . S"];
@@ -14,6 +15,7 @@ export class Level {
         if (this.level == 1) {
             this.div = document.createElement("level_1");
             this.words = new Words(this.level_1_Words);
+            this.letters = new Letter(4, this.level_1_Letters, this.level_1_wrongLetters);
             this.player = new Player();
         }
         else if (this.level == 2) {

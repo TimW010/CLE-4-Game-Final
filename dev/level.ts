@@ -1,6 +1,7 @@
 import { Game } from "./game.js";
 import { Words } from "./words.js";
 import { Player } from "./player.js";
+import { Letter } from "./letter.js";
 
 export class Level {
 
@@ -14,7 +15,7 @@ export class Level {
 
     //level 3
 
-
+    public letters : Letter;
     public player : Player;
     public words : Words;
     public div : HTMLElement;
@@ -31,6 +32,7 @@ export class Level {
         if (this.level == 1){
             this.div = document.createElement("level_1");
             this.words = new Words(this.level_1_Words);
+            this.letters = new Letter(4, this.level_1_Letters, this.level_1_wrongLetters);
             this.player = new Player();
         } else if (this.level == 2){
             this.div = document.createElement("level_2");
