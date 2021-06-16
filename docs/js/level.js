@@ -7,10 +7,10 @@ export class Level {
         this.level_1_Letters = ["A", "AA", "O", "OO", "O", "E", "OE"];
         this.level_1_CompletedWords = ["KAT", "AAP", "POP", "NOOT", "HOND", "HERT", "POES"];
         this.level_1_wrongLetters = ["AA", "A", "OE", "O", "OO", "EE", "OU"];
-        this.level_2_Words = ["test"];
-        this.level_2_Letters = ["t"];
-        this.level_2_CompletedWords = ["test2"];
-        this.level_2_wrongLetters = ["o"];
+        this.level_2_Words = ["M A .", "M . . S", "B . . M", "L E E . W", "S N . . .  W", "S . A A P", "S T R . N D"];
+        this.level_2_Letters = ["T", "UI", "OO", "U", "EEU", "CH", "A"];
+        this.level_2_CompletedWords = ["MAT", "MUIS", "BOOM", "LEEUW", "SNEEUW", "SCHAAP", "STRAND"];
+        this.level_2_wrongLetters = ["D", "EU", "OU", "I", "UEE", "G", "AA"];
         this.level_3_Words = [];
         this.level_3_Letters = [];
         this.level_3_CompletedWords = [];

@@ -12,10 +12,10 @@ export class Level {
     private level_1_wrongLetters : string[] = ["AA", "A", "OE", "O", "OO", "EE", "OU"];
 
     //level 2
-    private level_2_Words : string[] = ["test"];
-    private level_2_Letters : string[] = ["t"];
-    private level_2_CompletedWords : string[] = ["test2"];
-    private level_2_wrongLetters : string[] =["o"];
+    private level_2_Words : string[] = ["M A .", "M . . S", "B . . M", "L E E . W", "S N . . .  W", "S . A A P", "S T R . N D"];
+    private level_2_Letters : string[] = ["T", "UI", "OO", "U", "EEU", "CH", "A"];
+    private level_2_CompletedWords : string[] = ["MAT", "MUIS", "BOOM", "LEEUW", "SNEEUW", "SCHAAP", "STRAND"];
+    private level_2_wrongLetters : string[] =["D", "EU", "OU", "I", "UEE", "G", "AA"];
 
     //level 3
     private level_3_Words : string[] = [];

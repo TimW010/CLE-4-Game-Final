@@ -25,6 +25,7 @@ export class Game {
                 this.levels = new Level(this, level);
                 this.gameLoop();
             }
+            this.pause = false;
         }
     }
     handleTimeout() {
@@ -40,6 +41,7 @@ export class Game {
             this.levels.letters.update();
             if (this.checkCollision(this.levels.player.getBoundingRectangle(), this.levels.letters.getBoundingRectangle())) {
                 console.log("collision");
+                this.levels.words.speak(this.count);
                 setTimeout(() => this.handleTimeout(), 2000);
                 this.pause = true;
                 this.levels.words.showCorrectWord(this.count);
@@ -48,6 +50,7 @@ export class Game {
                 this.count = 0;
                 this.levels.goToMenu();
                 this.menu = new Menu(this);
+                this.pause = true;
             }
         }
         requestAnimationFrame(() => this.gameLoop());

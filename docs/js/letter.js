@@ -8,6 +8,7 @@ export class Letter {
     clear() {
         this.goodLetter.remove();
         this.wrongLetter.remove();
+        this.speed = 0;
     }
     create() {
         this.goodLetter = document.createElement("goodLetter");

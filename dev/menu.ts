@@ -49,10 +49,10 @@ export class Menu {
         this.div.appendChild(this.level2Button);
 
         //level 3 selector
-        this.level3Button = document.createElement("div");
+        /*this.level3Button = document.createElement("div");
         this.level3Button.innerText = "Level 3";
         this.level3Button.addEventListener('click', (e: MouseEvent) => this.play(e, 3));
-        this.div.appendChild(this.level3Button);
+        this.div.appendChild(this.level3Button);*/
     }
 
     private play(e: MouseEvent, level: number){

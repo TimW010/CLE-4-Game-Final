@@ -5,6 +5,7 @@ export class Words {
     private word : HTMLElement;
     private correctWords : string[];
     private words : string[];
+    private synth = window.speechSynthesis;
 
     constructor(array : string[], correct : string[]){
         this.words = array;
@@ -19,6 +20,7 @@ export class Words {
     private create(){
         this.word = document.createElement("word");
         document.body.appendChild(this.word);
+        this.speak(0);
         this.setPosition();
     }
 
@@ -30,6 +32,11 @@ export class Words {
 
     public changeWord(count : number){
         this.word.innerHTML = this.words[count];
+    }
+
+    public speak(count : number){
+        let utterThis = new SpeechSynthesisUtterance(this.correctWords[count]);
+        this.synth.speak(utterThis);
     }
 
     public showCorrectWord(count : number){

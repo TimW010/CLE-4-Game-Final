@@ -22,6 +22,7 @@ export class Letter {
     public clear(){
         this.goodLetter.remove();
         this.wrongLetter.remove();
+        this.speed = 0;
     }
 
     private create(){
