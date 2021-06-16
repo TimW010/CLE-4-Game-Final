@@ -3,14 +3,14 @@ import { Player } from "./player.js";
 import { Letter } from "./letter.js";
 export class Level {
     constructor(game, level) {
-        this.level_1_Words = ["K . T", ". . P", "P . P", "N . . T", "H . N D", "H . R T", "P . . S"];
-        this.level_1_Letters = ["A", "AA", "O", "OO", "O", "E", "OE"];
-        this.level_1_CompletedWords = ["KAT", "AAP", "POP", "NOOT", "HOND", "HERT", "POES"];
-        this.level_1_wrongLetters = ["AA", "A", "OE", "O", "OO", "EE", "OU"];
-        this.level_2_Words = ["M A .", "M . . S", "B . . M", "L E E . W", "S N . . .  W", "S . A A P", "S T R . N D"];
-        this.level_2_Letters = ["T", "UI", "OO", "U", "EEU", "CH", "A"];
-        this.level_2_CompletedWords = ["MAT", "MUIS", "BOOM", "LEEUW", "SNEEUW", "SCHAAP", "STRAND"];
-        this.level_2_wrongLetters = ["D", "EU", "OU", "I", "UEE", "G", "AA"];
+        this.level_1_Words = ["k . t", ". . p", "p . p", "n . . t", "h . n d", "h . r t", "p . . s"];
+        this.level_1_Letters = ["a", "aa", "o", "oo", "o", "e", "oe"];
+        this.level_1_CompletedWords = ["kat", "aap", "pop", "noot", "hond", "hert", "poes"];
+        this.level_1_wrongLetters = ["aa", "a", "ou", "o", "oo", "ee", "ou"];
+        this.level_2_Words = ["m a .", "m . . s", "b . . m", "l e e . w", "s n . . .  w", "s . a a p", "s t r . n d"];
+        this.level_2_Letters = ["t", "ui", "oo", "u", "eeu", "ch", "a"];
+        this.level_2_CompletedWords = ["mat", "muis", "boom", "leeuw", "sneeuw", "schaap", "strand"];
+        this.level_2_wrongLetters = ["d", "eu", "ou", "i", "uee", "g", "aa"];
         this.level_3_Words = [];
         this.level_3_Letters = [];
         this.level_3_CompletedWords = [];

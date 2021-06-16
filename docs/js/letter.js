@@ -1,6 +1,7 @@
 export class Letter {
     constructor(speed, good, wrong) {
         this.speed = speed;
+        console.log(this.speed);
         this.goodLetters = good;
         this.wrongLetters = wrong;
         this.create();
@@ -8,7 +9,6 @@ export class Letter {
     clear() {
         this.goodLetter.remove();
         this.wrongLetter.remove();
-        this.speed = 0;
     }
     create() {
         this.goodLetter = document.createElement("goodLetter");
@@ -26,6 +26,7 @@ export class Letter {
     }
     update() {
         this.y += this.speed;
+        console.log("y", this.y);
         this.goodLetter.style.transform = `translate(${this.xPosGood}px, ${this.y}px)`;
         this.wrongLetter.style.transform = `translate(${this.xPosWrong}px, ${this.y}px)`;
         if (this.y - this.goodLetter.clientHeight > window.innerHeight) {

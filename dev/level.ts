@@ -6,16 +6,16 @@ import { Letter } from "./letter.js";
 export class Level {
 
     //level 1
-    private level_1_Words : string[] = ["K . T", ". . P", "P . P", "N . . T", "H . N D", "H . R T", "P . . S"];
-    private level_1_Letters : string[] = ["A", "AA", "O", "OO", "O", "E", "OE"];
-    private level_1_CompletedWords : string[] = ["KAT", "AAP", "POP", "NOOT", "HOND", "HERT", "POES"];
-    private level_1_wrongLetters : string[] = ["AA", "A", "OE", "O", "OO", "EE", "OU"];
+    private level_1_Words : string[] = ["k . t", ". . p", "p . p", "n . . t", "h . n d", "h . r t", "p . . s"];
+    private level_1_Letters : string[] = ["a", "aa", "o", "oo", "o", "e", "oe"];
+    private level_1_CompletedWords : string[] = ["kat", "aap", "pop", "noot", "hond", "hert", "poes"];
+    private level_1_wrongLetters : string[] = ["aa", "a", "ou", "o", "oo", "ee", "ou"];
 
     //level 2
-    private level_2_Words : string[] = ["M A .", "M . . S", "B . . M", "L E E . W", "S N . . .  W", "S . A A P", "S T R . N D"];
-    private level_2_Letters : string[] = ["T", "UI", "OO", "U", "EEU", "CH", "A"];
-    private level_2_CompletedWords : string[] = ["MAT", "MUIS", "BOOM", "LEEUW", "SNEEUW", "SCHAAP", "STRAND"];
-    private level_2_wrongLetters : string[] =["D", "EU", "OU", "I", "UEE", "G", "AA"];
+    private level_2_Words : string[] = ["m a .", "m . . s", "b . . m", "l e e . w", "s n . . .  w", "s . a a p", "s t r . n d"];
+    private level_2_Letters : string[] = ["t", "ui", "oo", "u", "eeu", "ch", "a"];
+    private level_2_CompletedWords : string[] = ["mat", "muis", "boom", "leeuw", "sneeuw", "schaap", "strand"];
+    private level_2_wrongLetters : string[] =["d", "eu", "ou", "i", "uee", "g", "aa"];
 
     //level 3
     private level_3_Words : string[] = [];

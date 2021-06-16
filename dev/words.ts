@@ -36,7 +36,7 @@ export class Words {
 
     public speak(count : number){
         let utterThis = new SpeechSynthesisUtterance(this.correctWords[count]);
-        utterThis.lang = "nl";
+        utterThis.lang = "nl-NL";
         this.synth.speak(utterThis);
     }
 

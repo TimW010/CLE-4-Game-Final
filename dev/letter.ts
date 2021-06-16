@@ -14,6 +14,7 @@ export class Letter {
 
     constructor(speed : number, good : string[], wrong : string[]){
         this.speed = speed;
+        console.log(this.speed);
         this.goodLetters = good;
         this.wrongLetters = wrong;
         this.create();
@@ -22,7 +23,6 @@ export class Letter {
     public clear(){
         this.goodLetter.remove();
         this.wrongLetter.remove();
-        this.speed = 0;
     }
 
     private create(){
@@ -44,6 +44,7 @@ export class Letter {
 
     public update(){
         this.y += this.speed;
+        console.log("y", this.y);
         this.goodLetter.style.transform = `translate(${this.xPosGood}px, ${this.y}px)`;
         this.wrongLetter.style.transform = `translate(${this.xPosWrong}px, ${this.y}px)`;
 

@@ -15,14 +15,15 @@ export class Player {
         return this.div.getBoundingClientRect();
     }
     update() {
-        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`;
         this.x += this.horizontalSpeed;
+        console.log("horizontal speed", this.horizontalSpeed);
         if (this.x > (window.innerWidth - this.div.clientWidth)) {
             this.x = (window.innerWidth - this.div.clientWidth);
         }
         if (this.x < 0) {
             this.x = 0;
         }
+        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`;
     }
     onKeyDown(e) {
         switch (e.key) {

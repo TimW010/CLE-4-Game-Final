@@ -19,6 +19,7 @@ export class Player {
 
     public clear(){
         this.div.remove();
+        // this.horizontalSpeed = 0;
     }
 
     public getBoundingRectangle() : DOMRect {
@@ -26,14 +27,17 @@ export class Player {
     }
 
     public update() : void {
-        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`;
         this.x += this.horizontalSpeed;
+        console.log("horizontal speed", this.horizontalSpeed);
+        
+        
         if(this.x > (window.innerWidth - this.div.clientWidth)){
             this.x = (window.innerWidth - this.div.clientWidth);
         }
         if(this.x < 0){
             this.x = 0;
         }
+        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`;
     }
 
     private onKeyDown(e: KeyboardEvent) : void {
