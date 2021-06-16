@@ -12,6 +12,10 @@ export class Words {
         this.create();
     }
 
+    public clear(){
+        this.word.remove();
+    }
+
     private create(){
         this.word = document.createElement("word");
         document.body.appendChild(this.word);

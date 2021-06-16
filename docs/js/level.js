@@ -19,6 +19,12 @@ export class Level {
         this.level = level;
         this.create();
     }
+    goToMenu() {
+        this.words.clear();
+        this.letters.clear();
+        this.player.clear();
+        this.div.remove();
+    }
     create() {
         if (this.level == 1) {
             this.div = document.createElement("level_1");

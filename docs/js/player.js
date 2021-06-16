@@ -8,6 +8,9 @@ export class Player {
         this.x = ((window.innerWidth / 2) - (this.div.clientWidth / 2));
         this.y = ((window.innerHeight) - (this.div.clientHeight));
     }
+    clear() {
+        this.div.remove();
+    }
     getBoundingRectangle() {
         return this.div.getBoundingClientRect();
     }

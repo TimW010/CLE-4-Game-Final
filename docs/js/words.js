@@ -4,6 +4,9 @@ export class Words {
         this.correctWords = correct;
         this.create();
     }
+    clear() {
+        this.word.remove();
+    }
     create() {
         this.word = document.createElement("word");
         document.body.appendChild(this.word);

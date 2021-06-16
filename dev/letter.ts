@@ -19,6 +19,11 @@ export class Letter {
         this.create();
     }
 
+    public clear(){
+        this.goodLetter.remove();
+        this.wrongLetter.remove();
+    }
+
     private create(){
         this.goodLetter = document.createElement("goodLetter");
         this.wrongLetter = document.createElement("wrongLetter");
@@ -46,7 +51,7 @@ export class Letter {
         }
     }
 
-    private setPosition(){
+    public setPosition(){
         this.xPosGood = Math.floor(Math.random() * (window.innerWidth - this.goodLetter.clientWidth));
         this.y = (0 - this.goodLetter.clientHeight);
         this.xPosWrong = Math.floor(Math.random() * (window.innerWidth - this.wrongLetter.clientWidth));

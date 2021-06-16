@@ -5,6 +5,10 @@ export class Letter {
         this.wrongLetters = wrong;
         this.create();
     }
+    clear() {
+        this.goodLetter.remove();
+        this.wrongLetter.remove();
+    }
     create() {
         this.goodLetter = document.createElement("goodLetter");
         this.wrongLetter = document.createElement("wrongLetter");

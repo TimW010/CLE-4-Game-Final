@@ -17,6 +17,10 @@ export class Player {
 
     }
 
+    public clear(){
+        this.div.remove();
+    }
+
     public getBoundingRectangle() : DOMRect {
         return this.div.getBoundingClientRect()
     }

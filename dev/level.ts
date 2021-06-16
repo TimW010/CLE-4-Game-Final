@@ -36,6 +36,13 @@ export class Level {
         this.create();
     }
 
+    public goToMenu(){
+        this.words.clear();
+        this.letters.clear();
+        this.player.clear();
+        this.div.remove();
+    }
+
     private create(){
         if (this.level == 1){
             this.div = document.createElement("level_1");
