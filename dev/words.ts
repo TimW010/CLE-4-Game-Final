@@ -20,7 +20,6 @@ export class Words {
     private create(){
         this.word = document.createElement("word");
         document.body.appendChild(this.word);
-        this.speak(0);
         this.setPosition();
     }
 
@@ -32,6 +31,7 @@ export class Words {
 
     public changeWord(count : number){
         this.word.innerHTML = this.words[count];
+        this.speak(count);
     }
 
     public speak(count : number){

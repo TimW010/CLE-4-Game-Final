@@ -22,14 +22,18 @@ export class GameTemp {
                 this.level = new Level(this, level);
             }
             this.pause = false;
+            this.level.startAndChange();
             this.gameLoop();
         }
+    }
+    setMenu() {
+        this.menu = new Menu(this);
     }
     gameLoop() {
         if (this.play && !this.pause) {
             this.level.update();
-            requestAnimationFrame(() => this.gameLoop());
         }
+        requestAnimationFrame(() => this.gameLoop());
     }
 }
 new GameTemp();

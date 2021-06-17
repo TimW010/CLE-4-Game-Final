@@ -31,22 +31,21 @@ export class GameTemp {
                 this.level = new Level(this, level);
             }
             this.pause = false;
+            this.level.startAndChange();
             this.gameLoop();
         }
+    }
+
+    public setMenu(){
+        this.menu = new Menu(this);
     }
 
     public gameLoop(){
         if(this.play && !this.pause){
             this.level.update();
-            requestAnimationFrame(() => this.gameLoop());
         }
+        requestAnimationFrame(() => this.gameLoop());
     }
-
-    /*private checkCollision(a: ClientRect, b: ClientRect) : boolean {
-        return (a.left <= b.right &&
-            a.left <= b.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom)
-    }*/
+    
 }
 new GameTemp();

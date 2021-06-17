@@ -11,7 +11,6 @@ export class Words {
     create() {
         this.word = document.createElement("word");
         document.body.appendChild(this.word);
-        this.speak(0);
         this.setPosition();
     }
     setPosition() {
@@ -21,6 +20,7 @@ export class Words {
     }
     changeWord(count) {
         this.word.innerHTML = this.words[count];
+        this.speak(count);
     }
     speak(count) {
         let utterThis = new SpeechSynthesisUtterance(this.correctWords[count]);

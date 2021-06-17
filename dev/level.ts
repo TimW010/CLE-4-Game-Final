@@ -26,6 +26,8 @@ export class Level {
     private level_3_wrongLetters : string[] = [];
 
     private speed : number;
+    private count : number = 0;
+
 
     public pause : boolean = false;
     //public letters : Letter;
@@ -42,12 +44,14 @@ export class Level {
         this.create();
     }
 
-    /*public goToMenu(){
+    public goToMenu(){
         this.words.clear();
-        this.letters.clear();
+        for(let letter of this.letters){
+            letter.clear();
+        }
         this.player.clear();
         this.div.remove();
-    }*/
+    }
 
     private create(){
         if (this.level == 1){
@@ -74,23 +78,45 @@ export class Level {
         }
     }
 
+    public startAndChange(){
+        this.words.changeWord(this.count);
+        for(let letter of this.letters){
+            letter.changeLetters(this.count)
+        }
+        if(this.count > 6){
+            this.count = 0;
+            this.game.pause = true;
+            this.goToMenu();
+        }
+    }
+
+    private handleTimeout(){
+        this.game.pause = false;
+        this.count++;
+        for(let letter of this.letters){
+            letter.setPosition();
+        }
+        this.startAndChange();
+    }
+
     public update(){
-        this.words.changeWord(0);
         this.player.update();
         for(let letter of this.letters){
-            letter.changeLetters(0);
             letter.update(this.speed);
             if(this.checkCollision(this.player.getBoundingRectangle(), letter.getBoundingRectangle()) && letter.isGoodLetter){
                 console.log("collision");
+                setTimeout(() => this.handleTimeout(), 2000)
+                this.game.pause = true;
+                this.words.showCorrectWord(this.count);
             }
         }
     }
 
-    private checkCollision(a: ClientRect, b: ClientRect) : boolean {
-        return (a.left <= b.right &&
-            a.left <= b.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom)
+    private checkCollision(player: ClientRect, object: ClientRect) : boolean {
+        return (player.left <= object.right &&
+            object.left <= player.right &&
+            player.top <= object.bottom &&
+            object.top <= player.bottom)
     }
 
 }
