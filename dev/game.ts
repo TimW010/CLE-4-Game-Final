@@ -1,4 +1,4 @@
-import { Level } from "./level.js";
+/*import { Level } from "./level.js";
 import { Menu } from "./menu.js";
 
 export class Game {
@@ -69,3 +69,4 @@ export class Game {
     }
 }
 new Game();
+*/

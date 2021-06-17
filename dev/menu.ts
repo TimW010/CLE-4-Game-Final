@@ -1,4 +1,6 @@
-import { Game } from "./game.js";
+//import { Game } from "./game.js";
+// name has to change
+import { GameTemp } from "./gameTemp.js";
 
 export class Menu {
 
@@ -8,9 +10,10 @@ export class Menu {
     private playButton : HTMLElement;
     private title : HTMLElement;
     public div : HTMLElement;
-    private game : Game;
+    //name has to change (game : Game)
+    private game : GameTemp;
 
-    constructor(game : Game){
+    constructor(game : GameTemp){ //game : Game
         this.game = game;
         this.create();
     }
