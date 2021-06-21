@@ -15,9 +15,15 @@ export class Level {
         this.level_3_Letters = ["v", "oo", "e", "ui", "pp", "v", "ij", "oo"];
         this.level_3_CompletedWords = ["vos", "boom", "hert", "struik", "appel", "vogel", "konijn", "eekhoorn"];
         this.level_3_wrongLetters = ["f", "o", "ee", "eu", "hp", "f", "ei", "o"];
+        this.synth = window.speechSynthesis;
         this.game = game;
         this.level = level;
         this.create();
+    }
+    speak() {
+        let utterThis = new SpeechSynthesisUtterance("Goed Gedaan");
+        utterThis.lang = "nl-NL";
+        this.synth.speak(utterThis);
     }
     goToMenu() {
         this.words.clear();

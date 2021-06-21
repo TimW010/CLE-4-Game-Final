@@ -31,7 +31,12 @@ export class Game {
         this.pause = false;
         this.count++;
         this.levels.letters.setPosition();
-        this.levels.words.speak(this.count);
+        if (this.count < 8) {
+            this.levels.words.speak(this.count);
+        }
+        else {
+            this.levels.speak();
+        }
     }
     gameLoop() {
         if (!this.pause && this.levels) {

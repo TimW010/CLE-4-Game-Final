@@ -26,6 +26,7 @@ export class Level {
     private level_3_CompletedWords : string[] = ["vos", "boom", "hert", "struik", "appel", "vogel", "konijn", "eekhoorn"];
     private level_3_wrongLetters : string[] = ["f", "o", "ee", "eu", "hp", "f", "ei", "o"];
 
+    private synth = window.speechSynthesis;
     public letters : Letter;
     public player : Player;
     public words : Words;
@@ -37,6 +38,12 @@ export class Level {
         this.game = game;
         this.level = level;
         this.create();
+    }
+
+    public speak(){
+        let utterThis = new SpeechSynthesisUtterance("Goed Gedaan");
+        utterThis.lang = "nl-NL";
+        this.synth.speak(utterThis);
     }
 
     public goToMenu(){
