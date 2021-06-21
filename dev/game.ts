@@ -36,22 +36,22 @@ export class Game {
         this.pause = false;
         this.count++;
         this.levels.letters.setPosition();
+        this.levels.words.speak(this.count);
     }
 
     private gameLoop() : void {
         if(!this.pause && this.levels){
             this.levels.player.update();
+            this.levels.letters.update();
             this.levels.words.changeWord(this.count);
             this.levels.letters.changeLetters(this.count);
-            this.levels.letters.update();
             if(this.checkCollision(this.levels.player.getBoundingRectangle(), this.levels.letters.getBoundingRectangle())){
                 console.log("collision");
-                this.levels.words.speak(this.count);
                 setTimeout(() => this.handleTimeout(), 2000)
                 this.pause = true;
                 this.levels.words.showCorrectWord(this.count);
             }
-            if(this.count > 6){
+            if(this.count > 7){
                 this.count = 0;
                 this.levels.goToMenu();
                 this.menu = new Menu(this);

@@ -26,7 +26,6 @@ export class Letter {
     }
     update() {
         this.y += this.speed;
-        console.log("y", this.y);
         this.goodLetter.style.transform = `translate(${this.xPosGood}px, ${this.y}px)`;
         this.wrongLetter.style.transform = `translate(${this.xPosWrong}px, ${this.y}px)`;
         if (this.y - this.goodLetter.clientHeight > window.innerHeight) {
@@ -34,9 +33,17 @@ export class Letter {
         }
     }
     setPosition() {
-        this.xPosGood = Math.floor(Math.random() * (window.innerWidth - this.goodLetter.clientWidth));
         this.y = (0 - this.goodLetter.clientHeight);
-        this.xPosWrong = Math.floor(Math.random() * (window.innerWidth - this.wrongLetter.clientWidth));
+        let random = Math.floor(Math.random() * (8 - 0) + 1);
+        console.log(random);
+        if (random > 4) {
+            this.xPosGood = Math.floor(Math.random() * ((window.innerWidth / 2) - this.goodLetter.clientWidth));
+            this.xPosWrong = Math.floor(Math.random() * ((window.innerWidth - this.wrongLetter.clientWidth) - (window.innerWidth / 2)) + ((window.innerWidth / 2) - this.wrongLetter.clientWidth));
+        }
+        else {
+            this.xPosWrong = Math.floor(Math.random() * ((window.innerWidth / 2) - this.wrongLetter.clientWidth));
+            this.xPosGood = Math.floor(Math.random() * ((window.innerWidth - this.goodLetter.clientWidth) - (window.innerWidth / 2)) + ((window.innerWidth / 2) - this.goodLetter.clientWidth));
+        }
     }
 }
 //# sourceMappingURL=letter.js.map

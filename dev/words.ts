@@ -20,8 +20,8 @@ export class Words {
     private create(){
         this.word = document.createElement("word");
         document.body.appendChild(this.word);
-        this.speak(0);
         this.setPosition();
+        this.speak(0);
     }
 
     private setPosition(){

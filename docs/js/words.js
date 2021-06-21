@@ -11,8 +11,8 @@ export class Words {
     create() {
         this.word = document.createElement("word");
         document.body.appendChild(this.word);
-        this.speak(0);
         this.setPosition();
+        this.speak(0);
     }
     setPosition() {
         this.y = (0 + this.word.clientHeight);

@@ -25,6 +25,10 @@ export class Menu {
         this.level2Button.innerText = "Level 2";
         this.level2Button.addEventListener('click', (e) => this.play(e, 2));
         this.div.appendChild(this.level2Button);
+        this.level3Button = document.createElement("div");
+        this.level3Button.innerText = "Level 3";
+        this.level3Button.addEventListener('click', (e) => this.play(e, 3));
+        this.div.appendChild(this.level3Button);
     }
     play(e, level) {
         this.game.play = true;

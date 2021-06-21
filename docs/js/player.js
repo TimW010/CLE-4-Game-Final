@@ -16,7 +16,6 @@ export class Player {
     }
     update() {
         this.x += this.horizontalSpeed;
-        console.log("horizontal speed", this.horizontalSpeed);
         if (this.x > (window.innerWidth - this.div.clientWidth)) {
             this.x = (window.innerWidth - this.div.clientWidth);
         }
