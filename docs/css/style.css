@@ -47,20 +47,22 @@ level_1 {
     position: absolute;
     display: block;
     background-image: url("../images/level_1_background.png");
+    /*background-image: url("../images/background.png");*/
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100vw;
 }
 
-/*
+
 kat {
     position: absolute;
     display: block;
-    background-color: brown;
-    width: 100px; height: 100px;
-}*/
-
+    background-image: url("../images/kat.png");
+    margin-top: 953px;
+    margin-left: 200px;
+    width: 111px; height: 88px;
+}
 
 title {
     background-image: url("../images/titel.png");
