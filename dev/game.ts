@@ -39,7 +39,7 @@ export class Game {
         if (this.count < 8) {
             this.levels.words.speak(this.count);
         } else {
-            this.levels.speak();
+            this.levels.speak("Goed Gedaan");
         }
     }
 

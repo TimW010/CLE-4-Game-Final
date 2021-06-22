@@ -25,7 +25,7 @@ export class Level {
     private level_3_Letters : string[] = ["v", "oo", "e", "ui", "pp", "v", "ij", "oo"];
     private level_3_CompletedWords : string[] = ["vos", "boom", "hert", "struik", "appel", "vogel", "konijn", "eekhoorn"];
     private level_3_wrongLetters : string[] = ["f", "o", "ee", "eu", "hp", "f", "ei", "o"];
-
+    
     private pauseButton : HTMLElement;
     private levelObjects : string[];
     private levelObjectDiv : HTMLElement;
@@ -48,8 +48,8 @@ export class Level {
         this.div.appendChild(this.levelObjectDiv);
     }
 
-    public speak(){
-        let utterThis = new SpeechSynthesisUtterance("Goed Gedaan");
+    public speak(tekst : string){
+        let utterThis = new SpeechSynthesisUtterance(tekst);
         utterThis.lang = "nl-NL";
         this.synth.speak(utterThis);
     }
@@ -105,8 +105,10 @@ export class Level {
         this.game.pause = !this.game.pause;
         if(this.game.pause){
             this.pauseButton.style.backgroundImage = "url('././images/pauseButton3.png')";
+            this.speak("even pauzeren");
         } else {
             this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
+            this.speak("weer verder");
         }
     }
 

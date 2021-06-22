@@ -35,7 +35,7 @@ export class Game {
             this.levels.words.speak(this.count);
         }
         else {
-            this.levels.speak();
+            this.levels.speak("Goed Gedaan");
         }
     }
     gameLoop() {

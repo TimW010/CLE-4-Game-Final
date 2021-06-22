@@ -24,8 +24,8 @@ export class Level {
         this.levelObjectDiv = document.createElement(this.levelObjects[count]);
         this.div.appendChild(this.levelObjectDiv);
     }
-    speak() {
-        let utterThis = new SpeechSynthesisUtterance("Goed Gedaan");
+    speak(tekst) {
+        let utterThis = new SpeechSynthesisUtterance(tekst);
         utterThis.lang = "nl-NL";
         this.synth.speak(utterThis);
     }
@@ -74,9 +74,11 @@ export class Level {
         this.game.pause = !this.game.pause;
         if (this.game.pause) {
             this.pauseButton.style.backgroundImage = "url('././images/pauseButton3.png')";
+            this.speak("even pauzeren");
         }
         else {
             this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
+            this.speak("weer verder");
         }
     }
 }
