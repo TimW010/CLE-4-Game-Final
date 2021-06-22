@@ -44,15 +44,19 @@ export class Player {
         switch (e.key) {
             case "a":
                 this.horizontalSpeed = -10;
+                this.div.style.backgroundImage = "url('././images/left.png')";
                 break;
             case "d":
                 this.horizontalSpeed = 10;
+                this.div.style.backgroundImage = "url('././images/right.png')";
                 break;
             case "ArrowLeft":
                 this.horizontalSpeed = -10;
+                this.div.style.backgroundImage = "url('././images/left.png')";
                 break;
             case "ArrowRight":
                 this.horizontalSpeed = 10;
+                this.div.style.backgroundImage = "url('././images/right.png')";
                 break;
         }
     }

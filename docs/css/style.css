@@ -29,9 +29,9 @@ pauseButton {
 }
 
 player {
+    background-image: url("../images/right.png");
     position: absolute;
     display: block;
-    background-color: black;
     width: 100px; height: 200px;
 }
 
