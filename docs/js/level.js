@@ -3,10 +3,10 @@ import { Player } from "./player.js";
 import { Letter } from "./letter.js";
 export class Level {
     constructor(game, level) {
-        this.level_1_Words = ["k . t", "b . l", "p . p", "b e .", "h . n d", "p . . s", "n . . t", "b a n ."];
-        this.level_1_Letters = ["a", "a", "o", "d", "o", "oe", "oo", "k"];
+        this.level_1_Words = ["k . t", "b . l", "p . p", "b e .", "h o n .", "p . . s", "n . . t", "b a n ."];
+        this.level_1_Letters = ["a", "a", "o", "d", "d", "oe", "oo", "k"];
         this.level_1_CompletedWords = ["kat", "bal", "pop", "bed", "hond", "poes", "noot", "bank"];
-        this.level_1_wrongLetters = ["aa", "aa", "oh", "t", "oh", "ou", "o", "gk"];
+        this.level_1_wrongLetters = ["aa", "aa", "oh", "t", "t", "ou", "o", "gk"];
         this.level_2_Words = [". . p", "b . . r", "l . m a", "w o l .", "p a n d .", "l . . u w", "t . . g e r", "g . r a f"];
         this.level_2_Letters = ["aa", "ee", "a", "f", "a", "ee", "ij", "i"];
         this.level_2_CompletedWords = ["aap", "beer", "lama", "wolf", "panda", "leeuw", "tijger", "giraf"];
@@ -19,6 +19,10 @@ export class Level {
         this.game = game;
         this.level = level;
         this.create();
+    }
+    addObject(count) {
+        this.levelObjectDiv = document.createElement(this.levelObjects[count]);
+        this.div.appendChild(this.levelObjectDiv);
     }
     speak() {
         let utterThis = new SpeechSynthesisUtterance("Goed Gedaan");
@@ -37,6 +41,7 @@ export class Level {
             document.body.appendChild(this.div);
             this.words = new Words(this.level_1_Words, this.level_1_CompletedWords);
             this.letters = new Letter(4, this.level_1_Letters, this.level_1_wrongLetters);
+            this.levelObjects = this.level_1_CompletedWords;
             this.player = new Player();
         }
         else if (this.level == 2) {
@@ -44,6 +49,7 @@ export class Level {
             document.body.appendChild(this.div);
             this.words = new Words(this.level_2_Words, this.level_2_CompletedWords);
             this.letters = new Letter(5, this.level_2_Letters, this.level_2_wrongLetters);
+            this.levelObjects = this.level_2_CompletedWords;
             this.player = new Player();
         }
         else if (this.level == 3) {
@@ -51,7 +57,26 @@ export class Level {
             document.body.appendChild(this.div);
             this.words = new Words(this.level_3_Words, this.level_3_CompletedWords);
             this.letters = new Letter(6, this.level_3_Letters, this.level_3_wrongLetters);
+            this.levelObjects = this.level_3_CompletedWords;
             this.player = new Player();
+        }
+        this.pauseButton = document.createElement("pauseButton");
+        this.pauseButton.addEventListener('click', (e) => this.pauseGame(e));
+        this.pauseButton.addEventListener('mouseover', (e) => this.pauseButtonHover(e));
+        this.pauseButton.addEventListener('mouseout', (e) => this.pauseButtonHover(e));
+        this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
+        this.div.appendChild(this.pauseButton);
+    }
+    pauseButtonHover(e) {
+        this.pauseButton.style.cursor = "pointer";
+    }
+    pauseGame(e) {
+        this.game.pause = !this.game.pause;
+        if (this.game.pause) {
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton3.png')";
+        }
+        else {
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
         }
     }
 }

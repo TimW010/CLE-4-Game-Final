@@ -49,6 +49,7 @@ export class Game {
                 setTimeout(() => this.handleTimeout(), 2000);
                 this.pause = true;
                 this.levels.words.showCorrectWord(this.count);
+                this.levels.addObject(this.count);
             }
             if (this.count > 7) {
                 this.count = 0;

@@ -3,7 +3,7 @@ import { Menu } from "./menu.js";
 
 export class Game {
 
-    private pause : boolean = false
+    public pause : boolean = false
     private count : number = 0;
     public play : boolean = false;
     private levels : Level;
@@ -54,6 +54,7 @@ export class Game {
                 setTimeout(() => this.handleTimeout(), 2000)
                 this.pause = true;
                 this.levels.words.showCorrectWord(this.count);
+                this.levels.addObject(this.count);
             }
             if(this.count > 7){
                 this.count = 0;

@@ -5,6 +5,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background-color: cornflowerblue;
 }
 
 @font-face {
@@ -13,7 +14,18 @@ body {
 }
 
 menu {
-    text-align: center;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+pauseButton {
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200px;
+    height: 55px;
 }
 
 player {
@@ -41,6 +53,64 @@ level_1 {
     width: 100vw;
 }
 
+kat {
+    position: absolute;
+    display: block;
+    background-color: brown;
+    width: 100px; height: 100px;
+}
+
+
+title {
+    background-image: url("../images/titel.png");
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 784px;
+    height: 96px;
+}
+
+.buttons {
+    background-repeat: no-repeat;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px;
+}
+
+playButton {
+    background-image: url("../images/playButton.png");
+    width: 480px;
+    height: 192px;
+    margin: auto;
+}
+
+level1Button {
+    background-image: url("../images/button1.png");
+    width: 480px;
+    height: 192px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+level2Button {
+    background-image: url("../images/button2.png");
+    width: 480px;
+    height: 192px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+level3Button {
+    background-image: url("../images/button3.png");
+    width: 480px;
+    height: 192px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 level_2 {
     position: absolute;
     display: block;
@@ -50,6 +120,7 @@ level_2 {
     height: 100vh;
     width: 100vw;
 }
+
 
 level_3 {
     position: absolute;

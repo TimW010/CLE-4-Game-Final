@@ -7,10 +7,10 @@ export class Level {
     
     //level 1
     //thuis
-    private level_1_Words : string[] = ["k . t", "b . l", "p . p", "b e .", "h . n d", "p . . s", "n . . t", "b a n ."];
-    private level_1_Letters : string[] = ["a", "a", "o", "d", "o", "oe", "oo", "k"];
-    private level_1_CompletedWords : string[] = ["kat", "bal", "pop", "bed", "hond", "poes", "noot", "bank"];
-    private level_1_wrongLetters : string[] =["aa", "aa", "oh", "t", "oh", "ou", "o", "gk"];
+    private level_1_Words : string[] = ["k . t", "b . l", "p . p", "b e .", "h o n .", "p . . s", "n . . t", "b a n ."];
+    private level_1_Letters : string[] = ["a", "a", "o", "d", "d", "oe", "oo", "k"];
+    public level_1_CompletedWords : string[] = ["kat", "bal", "pop", "bed", "hond", "poes", "noot", "bank"];
+    private level_1_wrongLetters : string[] =["aa", "aa", "oh", "t", "t", "ou", "o", "gk"];
     
     //level 2
     //dierentuin
@@ -26,6 +26,9 @@ export class Level {
     private level_3_CompletedWords : string[] = ["vos", "boom", "hert", "struik", "appel", "vogel", "konijn", "eekhoorn"];
     private level_3_wrongLetters : string[] = ["f", "o", "ee", "eu", "hp", "f", "ei", "o"];
 
+    private pauseButton : HTMLElement;
+    private levelObjects : string[];
+    private levelObjectDiv : HTMLElement;
     private synth = window.speechSynthesis;
     public letters : Letter;
     public player : Player;
@@ -38,6 +41,11 @@ export class Level {
         this.game = game;
         this.level = level;
         this.create();
+    }
+
+    public addObject(count : number){
+        this.levelObjectDiv = document.createElement(this.levelObjects[count]);
+        this.div.appendChild(this.levelObjectDiv);
     }
 
     public speak(){
@@ -59,19 +67,46 @@ export class Level {
             document.body.appendChild(this.div);
             this.words = new Words(this.level_1_Words, this.level_1_CompletedWords);
             this.letters = new Letter(4, this.level_1_Letters, this.level_1_wrongLetters);
+            this.levelObjects = this.level_1_CompletedWords;
             this.player = new Player();
         } else if (this.level == 2){
             this.div = document.createElement("level_2");
             document.body.appendChild(this.div);
             this.words = new Words(this.level_2_Words, this.level_2_CompletedWords);
             this.letters = new Letter(5, this.level_2_Letters, this.level_2_wrongLetters);
+            this.levelObjects = this.level_2_CompletedWords;
             this.player = new Player();
         } else if (this.level == 3){
             this.div = document.createElement("level_3");
             document.body.appendChild(this.div);
             this.words = new Words(this.level_3_Words, this.level_3_CompletedWords);
             this.letters = new Letter(6, this.level_3_Letters, this.level_3_wrongLetters);
+            this.levelObjects = this.level_3_CompletedWords;
             this.player = new Player();
+        }
+        this.pauseButton = document.createElement("pauseButton");
+        this.pauseButton.addEventListener('click', (e: MouseEvent) => this.pauseGame(e));
+        this.pauseButton.addEventListener('mouseover', (e: MouseEvent) => this.pauseButtonHover(e))
+        this.pauseButton.addEventListener('mouseout', (e: MouseEvent) => this.pauseButtonHover(e))
+        this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
+        this.div.appendChild(this.pauseButton);
+    }
+
+    private pauseButtonHover(e : MouseEvent){
+        /*if(onHover){
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton2.png')";
+        } else {
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
+        }*/
+        this.pauseButton.style.cursor = "pointer";
+    }
+
+    private pauseGame(e: MouseEvent){
+        this.game.pause = !this.game.pause;
+        if(this.game.pause){
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton3.png')";
+        } else {
+            this.pauseButton.style.backgroundImage = "url('././images/pauseButton1.png')";
         }
     }
 
