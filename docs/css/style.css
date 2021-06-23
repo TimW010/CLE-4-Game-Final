@@ -54,6 +54,23 @@ level_1 {
     width: 100vw;
 }
 
+bal {
+    position: absolute;
+    display: block;
+    background-image: url("../images/ball.png");
+    margin-top: 800px;
+    margin-left: 500px;
+    width: 100px; height: 103px;
+}
+
+hond {
+    position: absolute;
+    display: block;
+    background-image: url("../images/hond.png");
+    margin-top: 761px;
+    margin-left: 1200px;
+    width: 159px; height: 161px;
+}
 
 kat {
     position: absolute;
